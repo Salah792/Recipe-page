@@ -1,0 +1,213 @@
+:root {
+  --ff-sans: "Outfit", sans-serif;
+  --ff-serif: "Young Serif", serif;
+
+  --fs-400: 1rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.375rem;
+  --fs-700: 1.75rem;
+  --fs-900: 2.125rem;
+
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  --clr-White: hsl(0, 0%, 100%);
+
+  --clr-Stone-100: hsl(30, 54%, 90%);
+  --clr-Stone-150: hsl(30, 18%, 87%);
+  --clr-Stone-600: hsl(30, 10%, 34%);
+  --clr-Stone-900: hsl(24, 5%, 18%);
+
+  --clr-Brown-800: hsl(14, 45%, 36%);
+
+  --clr-Rose-800: hsl(332, 51%, 32%);
+  --clr-Rose-50: hsl(330, 100%, 98%);
+
+  --br-lg: 1rem;
+  --br-sm: 0.5rem;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2 {
+  font-family: var(--ff-serif);
+  line-height: 1.1;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  color: var(--clr-Stone-600);
+  background-color: var(--clr-Rose-50);
+
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-style: var(--fs-900);
+  color: var(--clr-Stone-900);
+  font-weight: var(--fw-700);
+}
+h2 {
+  font-style: var(--fs-600);
+  color: var(--clr-Brown-800);
+  font-weight: var(--fw-600);
+}
+/* Utility classes  */
+.container {
+  max-width: 45rem;
+  background-color: var(--clr-White);
+  padding-inline: 2rem;
+}
+.flow-content > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+.flow-content-sm > * + * {
+  margin-top: var(--flow-space, 0.75rem);
+}
+/* Header  */
+header {
+  border-top-right-radius: var(--br-lg);
+  border-top-left-radius: var(--br-lg);
+  padding-bottom: 1.5rem;
+}
+header img {
+  width: 100vw;
+  /* border: 1px solid red; */
+}
+.header-infos {
+  padding-inline: 2rem;
+}
+
+main {
+  padding-bottom: 2rem;
+  border-bottom-right-radius: var(--br-lg);
+  border-bottom-left-radius: var(--br-lg);
+  /* border: 1px solid red; */
+}
+section {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--clr-Stone-150);
+}
+
+/* preparation-time  */
+.preparation-time {
+  background-color: var(--clr-Rose-50);
+  border-radius: var(--br-sm);
+  border-bottom: none;
+  padding: 1.5rem 2rem;
+}
+.preparation-time h2 {
+  font-family: var(--ff-sans);
+}
+.preparation-time ul,
+.preparation-time li {
+  list-style-type: disc;
+}
+.preparation-time ul {
+  margin-left: 1.5rem;
+}
+.preparation-time li {
+  padding-left: 1rem;
+}
+.preparation-time ul li::marker {
+  color: var(--clr-Brown-800);
+}
+
+/* ingredients */
+
+.ingredients ul,
+.ingredients li {
+  list-style-type: disc;
+}
+.ingredients ul {
+  margin-left: 1.5rem;
+}
+.ingredients li {
+  padding-left: 1rem;
+}
+.ingredients ul li::marker {
+  color: var(--clr-Brown-800);
+}
+
+/* instructions  */
+
+.instructions ol,
+.instructions li {
+  list-style-type: decimal;
+}
+.instructions ol {
+  margin-left: 1.5rem;
+}
+.instructions li {
+  padding-left: 1rem;
+}
+.instructions ol li::marker {
+  color: var(--clr-Brown-800);
+  font-weight: var(--fw-700);
+}
+
+/* nutrition  */
+.nutrition {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.nutrition table {
+  width: 100%;
+}
+.nutrition table th {
+  text-align: left;
+  font-weight: var(--fw-400);
+}
+.nutrition table td {
+  color: var(--clr-Brown-800);
+  font-weight: var(--fw-600);
+}
+.nutrition table tr td,
+.nutrition table tr th {
+  border-bottom: 1px solid var(--clr-Stone-150);
+  padding-block: 0.5rem;
+}
+.nutrition table tr th {
+  padding-left: 1.5rem;
+}
+.nutrition tbody > :last-child > * {
+  border-bottom: none;
+}
+
+/* Media queries  */
+@media (min-width: 600px) {
+  header.container {
+    padding-inline: min((100cqi - 600px), 2rem);
+  }
+  img {
+    max-width: 100%;
+    /* border: 1px solid red; */
+    border-radius: var(--br-sm);
+  }
+
+  body {
+    /* padding-block: 6rem; */
+    padding-block: min((100vw - 45rem)/2, 6rem);
+  }
+  header {
+    padding-top: min((100cqi - 600px), 2rem);
+  }
+  .header-infos {
+    /* padding-inline: 0; */
+    padding-inline: max(2rem - ((100vw - 600px) / 2), 0rem);
+  }
+}
