@@ -57,12 +57,12 @@ body {
   align-items: center;
 }
 h1 {
-  font-style: var(--fs-900);
+  font-size: var(--fs-900);
   color: var(--clr-Stone-900);
   font-weight: var(--fw-700);
 }
 h2 {
-  font-style: var(--fs-600);
+  font-size: var(--fs-600);
   color: var(--clr-Brown-800);
   font-weight: var(--fw-600);
 }
